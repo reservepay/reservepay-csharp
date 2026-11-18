@@ -11,12 +11,12 @@ The clients (found in `src/Reservepay/`) were generated using the [WebFunction C
 dotnet add package Reservepay
 ```
 
-Each API is in its own namespace (`Reservepay.Merchant`, `Reservepay.SDK`, `Reservepay.Terminal`), each with a `Client` class. Each `Client` has a static `NewClientAsync` method which returns a fully configured client, ready to access the associated API.
+Each API is in its own namespace (`Reservepay.Merchant`, `Reservepay.SDK`, `Reservepay.Terminal`), each with a `Client` class. Each `Client` has a static `CreateNew` method which returns a fully configured client, ready to access the associated API.
 
 ```csharp
 using Reservepay.Merchant;
 
-var client = await Client.NewClientAsync(bearerAuth: "MY_API_KEY");
+var client = await Client.CreateNew(bearerAuth: "MY_API_KEY");
 
 var versions = await client.AvailableApiVersions();
 
