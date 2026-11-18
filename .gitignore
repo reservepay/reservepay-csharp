@@ -1,0 +1,15 @@
+# Build output
+bin/
+obj/
+*.nupkg
+*.snupkg
+
+# Editor / OS
+.vs/
+.idea/
+.vscode/
+*.user
+.DS_Store
+
+# Local scratch
+scratch/

@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <PackageId>Reservepay</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>Reservepay</Authors>
+    <Description>Typed C# clients for the Reservepay APIs</Description>
+    <PackageTags>reservepay;payments;api;client;merchants;webfunction</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/reservepay/reservepay-csharp</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+  <!-- The clients wrap webfunction-csharp. Use the NuGet package by default; to build against a local
+       checkout instead (e.g. while webfunction-csharp is unpublished), pass its project file:
+       dotnet build -p:WebFunctionProject=/path/to/webfunction-csharp/src/WebFunction/WebFunction.csproj -->
+  <ItemGroup Condition="'$(WebFunctionProject)' != ''">
+    <ProjectReference Include="$(WebFunctionProject)" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(WebFunctionProject)' == ''">
+    <PackageReference Include="WebFunction" Version="0.3.0" />
+  </ItemGroup>
+
+</Project>
