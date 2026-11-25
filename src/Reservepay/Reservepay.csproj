@@ -26,7 +26,7 @@
     <ProjectReference Include="$(WebFunctionProject)" />
   </ItemGroup>
   <ItemGroup Condition="'$(WebFunctionProject)' == ''">
-    <PackageReference Include="WebFunction" Version="0.3.0" />
+    <PackageReference Include="WebFunction" Version="0.3.1" />
   </ItemGroup>
 
 </Project>
